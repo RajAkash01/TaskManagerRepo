@@ -25,7 +25,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.akash_raj.TaskApp"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
@@ -33,6 +34,11 @@
     "plugins": [
       "expo-font",
       "expo-asset"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "6b74923b-ee81-41d9-b4ca-5f14ac415cce"
+      }
+    }
   }
 }
