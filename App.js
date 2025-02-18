@@ -4,8 +4,10 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useLoadedAssets } from "./hooks/useLoadedAssets";
-import Navigation from "./navigation";
 import { useColorScheme } from "react-native";
+import { AuthorizationProvider } from "./context/AuthorizationContext";
+import AuthNavigator from "./navigation/AuthNavigator";
+import { PaperProvider } from "react-native-paper";
 
 export default function App() {
   const isLoadingComplete = useLoadedAssets();
@@ -16,7 +18,11 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
+        <PaperProvider>
+          <AuthorizationProvider>
+            <AuthNavigator/>
+          </AuthorizationProvider>
+        </PaperProvider>
         <StatusBar />
       </SafeAreaProvider>
     );
