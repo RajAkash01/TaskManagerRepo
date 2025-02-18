@@ -13,7 +13,7 @@ export default function AddTaskScreen({ navigation }) {
   const addTask = async () => {
     try {
         const response = await axios.post(
-          "http://localhost:5000/tasks",
+          "https://taskmangerbackend-hsbd.onrender.com/tasks",
           { title, description },
           {
             headers: {

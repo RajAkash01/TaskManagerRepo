@@ -12,7 +12,7 @@ export default function SignupScreen({ navigation }) {
   const handleSignup = async () => {
     try {
       const response = await axios.post(
-       "http://localhost:5000/auth/signup",
+       "https://taskmangerbackend-hsbd.onrender.com/auth/signup",
         { name, email, password },
         { headers: { "Content-Type": "application/json" } }
       );

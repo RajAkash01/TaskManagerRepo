@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
   const fetchTasks = async () => {
     setRefreshing(true);
     try {
-      const response = await axios.get("http://localhost:5000/tasks", {
+      const response = await axios.get("https://taskmangerbackend-hsbd.onrender.com/tasks", {
         headers: { Authorization: `Bearer ${auth?.token}` },
       });
       if(response.data?.length > 0 ){

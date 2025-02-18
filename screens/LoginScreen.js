@@ -12,7 +12,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/auth/login", 
+      const response = await axios.post("https://taskmangerbackend-hsbd.onrender.com/auth/login", 
         { email, password }, 
         { headers: { "Content-Type": "application/json" } }
       );

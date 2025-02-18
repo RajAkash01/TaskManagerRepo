@@ -13,7 +13,7 @@ export default function TaskDetailsScreen({ route, navigation }) {
   const auth = useContext(AuthContext);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/tasks/${id}`, {
+    axios.get(`https://taskmangerbackend-hsbd.onrender.com/tasks/${id}`, {
       headers: { Authorization: `Bearer ${auth?.token}` },
     })
     .then(response =>{
@@ -27,7 +27,7 @@ export default function TaskDetailsScreen({ route, navigation }) {
   const updateTask = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/tasks/${id}`,
+        `https://taskmangerbackend-hsbd.onrender.com/tasks/${id}`,
         { title: newTitle, description: newDescription },
         { headers: { Authorization: `Bearer ${auth?.token}` } }
       );
@@ -46,7 +46,7 @@ export default function TaskDetailsScreen({ route, navigation }) {
 
   const deleteTask = async (taskid) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/tasks/${taskid}`, {
+      const response = await axios.delete(`https://taskmangerbackend-hsbd.onrender.com/tasks/${taskid}`, {
         headers: { Authorization: `Bearer ${auth?.token}` },
       });
   
